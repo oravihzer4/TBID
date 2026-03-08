@@ -11,6 +11,10 @@ function Hero() {
       <div className="hero__content">
         <p className="hero__label">Interior Designer</p>
         <h1 className="hero__title">Tevel Biton</h1>
+        <p className="hero__tagline">
+          Functional. Elegant. Unique.
+          <span className="hero__tagline-accent">Life Well Designed.</span>
+        </p>
         <p className="hero__subtitle">
           Creating timeless spaces that harmonize elegance with everyday living.
         </p>

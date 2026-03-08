@@ -3,13 +3,18 @@ import './Footer.css';
 function Footer() {
   return (
     <footer id="contact" className="footer">
+      <div className="footer__journey">
+        <h3 className="footer__journey-title">Follow Our Journey</h3>
+        <a href="#" className="footer__journey-link" target="_blank" rel="noopener noreferrer">
+          Instagram →
+        </a>
+      </div>
       <div className="footer__content">
         <div className="footer__brand">
           <h3 className="footer__logo">Tevel Biton Interior Design</h3>
-          <p className="footer__tagline">Crafting spaces with intention.</p>
+          <p className="footer__address">Tel Aviv, Israel</p>
         </div>
         <div className="footer__contact">
-          <h4 className="footer__heading">Get in touch</h4>
           <a href="mailto:hello@tevelbiton.com" className="footer__link">
             hello@tevelbiton.com
           </a>
@@ -17,15 +22,10 @@ function Footer() {
             +972 50 123 4567
           </a>
         </div>
-        <div className="footer__social">
-          <h4 className="footer__heading">Follow</h4>
-          <a href="#" className="footer__link">Instagram</a>
-          <a href="#" className="footer__link">Pinterest</a>
-        </div>
       </div>
       <div className="footer__bottom">
         <p className="footer__copyright">
-          © {new Date().getFullYear()} Tevel Biton Interior Design. All rights reserved.
+          © {new Date().getFullYear()} Tevel Biton Interior Design
         </p>
       </div>
     </footer>

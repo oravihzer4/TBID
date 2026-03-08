@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
+  { label: 'About', href: '#about' },
   { label: 'Portfolio', href: '#portfolio' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
@@ -10,9 +11,16 @@ const navLinks = [
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
       <a href="#hero" className="navbar__logo">
         TBID
       </a>

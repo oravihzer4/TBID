@@ -1,69 +1,91 @@
 .footer {
-  background: var(--color-surface);
-  padding: 5rem 2rem 2rem;
-  border-top: 1px solid rgba(45, 42, 38, 0.08);
+  background: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 5rem 2.5rem 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__journey {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer__journey-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.footer__journey-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer__journey-link:hover {
+  opacity: 0.8;
 }
 
 .footer__content {
   max-width: 1200px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
 
 .footer__logo {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: #fff;
   margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
 }
 
-.footer__tagline {
+.footer__address {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
-}
-
-.footer__heading {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin: 0 0 1rem;
 }
 
 .footer__link {
   display: block;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   margin-bottom: 0.5rem;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .footer__link:hover {
-  color: var(--color-accent);
+  opacity: 0.8;
 }
 
 .footer__bottom {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid rgba(45, 42, 38, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer__copyright {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
+
 
 @media (max-width: 768px) {
   .footer {
@@ -73,6 +95,6 @@
   .footer__content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 }
