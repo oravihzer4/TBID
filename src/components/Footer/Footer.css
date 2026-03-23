@@ -13,7 +13,7 @@
 }
 
 .footer__journey-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.75rem;
   font-weight: 500;
   color: #fff;
@@ -43,7 +43,7 @@
 }
 
 .footer__logo {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.4rem;
   font-weight: 500;
   color: #fff;
@@ -85,7 +85,6 @@
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
-
 
 @media (max-width: 768px) {
   .footer {

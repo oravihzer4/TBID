@@ -1,12 +1,21 @@
 import "./Hero.css";
-
-const heroImage =
-  "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80";
+import heroVideo from "../../media/mainvideo/copy_74737672-A535-4EBE-83C7-33193399F7BF.mov";
 
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="hero__image" style={{ backgroundImage: `url(${heroImage})` }} />
+      <div className="hero__video-wrap">
+        <video
+          className="hero__video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80"
+        >
+          <source src={heroVideo} />
+        </video>
+      </div>
       <div className="hero__overlay" />
       <div className="hero__content">
         <p className="hero__label">Interior Designer</p>

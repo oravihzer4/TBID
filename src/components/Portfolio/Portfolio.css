@@ -36,6 +36,8 @@
 .portfolio-card {
   background: transparent;
   transition: transform 0.4s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .portfolio-card:hover {
