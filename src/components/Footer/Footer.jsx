@@ -43,7 +43,7 @@ function Footer() {
                 tevelbiton1@gmail.com
               </a>
               <a
-                href="tel:+972501234567"
+                href="tel:+972504532673"
                 className="footer__link footer__contact-link"
               >
                 <span className="footer__contact-icon" aria-hidden="true">

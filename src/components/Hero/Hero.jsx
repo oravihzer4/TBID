@@ -16,7 +16,7 @@ function Hero() {
           playsInline
           poster="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80"
         >
-          <source src={heroVideo} />
+          <source src={heroVideo} type="video/quicktime" />
         </video>
       </div>
       <div className="hero__overlay" />
