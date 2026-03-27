@@ -8,7 +8,7 @@ import { LanguageProvider } from "./context/LanguageContext.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <LanguageProvider>
-      <BrowserRouter basename="/TBID/">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </LanguageProvider>
