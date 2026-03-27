@@ -13,7 +13,7 @@
 }
 
 .footer__journey-title {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 500;
   color: #fff;
@@ -21,6 +21,9 @@
 }
 
 .footer__journey-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 500;
@@ -30,6 +33,18 @@
   transition: opacity 0.2s ease;
 }
 
+.footer__instagram-icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+}
+
+.footer__instagram-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
 .footer__journey-link:hover {
   opacity: 0.8;
 }
@@ -37,25 +52,67 @@
 .footer__content {
   max-width: 1200px;
   margin: 0 auto 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
 }
 
-.footer__logo {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #fff;
-  margin: 0 0 0.5rem;
-  letter-spacing: 0.02em;
+.footer__brand-main {
+  width: 100%;
+}
+
+.footer__logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+.footer__full-logo {
+  display: block;
+  width: auto;
+  max-width: min(400px, 62vw);
+  max-height: 92px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .footer__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
+}
+
+.footer__address .footer__contact-icon {
+  margin-top: 0.15em;
+}
+
+.footer__contact-icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.footer__contact-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
 }
 
 .footer__link {
@@ -64,12 +121,18 @@
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  margin-bottom: 0.5rem;
+  margin: 0;
   transition: opacity 0.2s ease;
 }
 
 .footer__link:hover {
   opacity: 0.8;
+}
+
+.footer__link.footer__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer__bottom {
@@ -92,8 +155,20 @@
   }
 
   .footer__content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
     margin-bottom: 2.5rem;
+  }
+
+  .footer__logo-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__full-logo {
+    max-width: 100%;
+    max-height: 120px;
+  }
+
+  .footer__contact {
+    width: 100%;
   }
 }

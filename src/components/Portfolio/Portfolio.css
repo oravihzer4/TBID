@@ -20,11 +20,11 @@
 }
 
 .portfolio__title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-heading);
   font-size: clamp(2.75rem, 5vw, 4rem);
   font-weight: 400;
   color: var(--color-text);
-  margin: 0.75rem 0 0;
+  /* margin: 0.75rem 0 0; */
 }
 
 .portfolio__grid {
@@ -46,7 +46,7 @@
 
 .portfolio-card__image {
   overflow: hidden;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.7rem;
   aspect-ratio: 4 / 5;
 }
 
@@ -71,11 +71,11 @@
 }
 
 .portfolio-card__title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-text);
-  margin: 0.5rem 0 0;
+  margin: 0;
 }
 
 .portfolio-card__description {

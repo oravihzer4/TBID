@@ -21,17 +21,26 @@
 }
 
 .navbar__logo {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  display: inline-flex;
+  align-items: center;
   color: #fff;
   text-decoration: none;
   transition: color 0.4s ease, opacity 0.2s ease;
 }
 
+.navbar__logo-image {
+  width: 52px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
 .navbar--scrolled .navbar__logo {
   color: var(--color-text);
+}
+
+.navbar--scrolled .navbar__logo-image {
+  filter: none;
 }
 
 .navbar__logo:hover {
@@ -44,6 +53,25 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.navbar__lang {
+  margin-left: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.6rem;
+  cursor: pointer;
+}
+
+.navbar--scrolled .navbar__lang {
+  color: var(--color-text);
+  border-color: rgba(26, 25, 23, 0.25);
 }
 
 .navbar__link {
@@ -135,8 +163,15 @@
     transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
+  .navbar__lang {
+    margin-left: auto;
+    margin-right: 0.5rem;
+    color: var(--color-text);
+    border-color: rgba(26, 25, 23, 0.25);
+  }
+
   .navbar__links.open {
-    max-height: 300px;
+    max-height: 420px;
     opacity: 1;
     padding: 1.5rem 2rem;
   }

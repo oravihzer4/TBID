@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { projects } from "../../data/projectsData";
+import { useLanguage } from "../../context/LanguageContext";
 import "./Portfolio.css";
 
-function PortfolioCard({ project }) {
+function PortfolioCard({ project, t }) {
   return (
     <Link to={`/project/${project.id}`} className="portfolio-card">
       <div className="portfolio-card__image">
@@ -13,25 +14,26 @@ function PortfolioCard({ project }) {
         />
       </div>
       <div className="portfolio-card__content">
-        <span className="portfolio-card__meta">
-          {project.type} — {project.year}
-        </span>
-        <h3 className="portfolio-card__title">{project.name}</h3>
+        <h2 className="portfolio-card__title">{project.name}</h2>
+        {/* <span className="portfolio-card__meta">
+          {t.projectMeta[project.type] || project.type} — {project.year}
+        </span> */}
       </div>
     </Link>
   );
 }
 
 function Portfolio() {
+  const { t } = useLanguage();
   return (
     <section id="portfolio" className="portfolio">
       <div className="portfolio__header">
-        <span className="portfolio__label">Selected Works</span>
-        <h2 className="portfolio__title">Portfolio</h2>
+        <span className="portfolio__label">{t.portfolio.label}</span>
+        <h2 className="portfolio__title">{t.portfolio.title}</h2>
       </div>
       <div className="portfolio__grid">
         {projects.map((project) => (
-          <PortfolioCard key={project.id} project={project} />
+          <PortfolioCard key={project.id} project={project} t={t} />
         ))}
       </div>
     </section>

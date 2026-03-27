@@ -1,82 +1,47 @@
-export const projects = [
-  {
-    id: 1,
+const projectImageModules = import.meta.glob("../media/projectsmedia/*/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}", {
+  eager: true,
+  import: "default",
+});
+
+const projectFolders = Object.entries(projectImageModules).reduce((acc, [path, src]) => {
+  const folderName = path.split("/").at(-2);
+  if (!acc[folderName]) acc[folderName] = [];
+  acc[folderName].push({ path, src });
+  return acc;
+}, {});
+
+const sortedFolderNames = Object.keys(projectFolders).sort();
+
+const projectDescriptions = {
+  MY5: "תכנון ועיצוב פנים פנטהאוז דופלקס בנווה צדק - שיפוץ מהיסוד",
+  G23: "תכנון ועיצוב פנים פנטהאוז בפתח תקווה - תהליך שינויי דיירים ושיפוץ לאחר קבלת מפתח",
+  S30: "תכנון ועיצוב בית פרטי בנס ציונה - תהליך בניה פרטית משלב ההיתרים",
+  SA16: "תכנון ועיצוב פנים פנטהאוז בקריית אונו - תהליך שינויי דיירים ושיפוץ לאחר קבלת מפתח",
+  T15: "תכנון ועיצוב פנים פנטהאוז בנווה מונוסון - תהליך שינויי דיירים ושיפוץ לאחר קבלת מפתח",
+  YN3: "תכנון ועיצוב פנים פנטהאוז בקריית אונו - שיפוץ מלא",
+};
+
+const sortGalleryImages = (a, b) => {
+  const aName = a.path.split("/").at(-1).toLowerCase();
+  const bName = b.path.split("/").at(-1).toLowerCase();
+  const aIsCover = aName.includes("מאסטר") || aName.includes("master");
+  const bIsCover = bName.includes("מאסטר") || bName.includes("master");
+  if (aIsCover && !bIsCover) return -1;
+  if (!aIsCover && bIsCover) return 1;
+  return aName.localeCompare(bName);
+};
+
+export const projects = sortedFolderNames.map((folderName, index) => {
+  const gallery = projectFolders[folderName].sort(sortGalleryImages).map((img) => img.src);
+  const [zone = "", cityCode = ""] = folderName.split("_");
+  const projectCode = zone.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+  return {
+    id: index + 1,
     year: "2024",
-    name: "Skyline Residence",
-    type: "Full Renovation",
-    location: "Tel Aviv",
-    description:
-      "A complete transformation of a penthouse with panoramic city views. Modern finishes meet warm natural materials in this sophisticated urban retreat.",
-    gallery: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  {
-    id: 2,
-    year: "2024",
-    name: "Heritage Apartment",
+    name: folderName,
     type: "Interior Design",
-    location: "Jaffa",
-    description:
-      "Restoring the soul of a historic Jaffa building while introducing contemporary comfort. Ottoman-era character preserved through thoughtful material choices.",
-    gallery: [
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  {
-    id: 3,
-    year: "2023",
-    name: "Riverside Loft",
-    type: "Commercial",
-    location: "Ramat Gan",
-    description:
-      "An industrial loft repurposed as a creative studio. Raw concrete and steel balanced with soft textiles and abundant natural light.",
-    gallery: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  {
-    id: 4,
-    year: "2023",
-    name: "Garden Villa",
-    type: "New Build",
-    location: "Herzliya",
-    description:
-      "A new family home where indoor and outdoor flow seamlessly. Large windows frame the Mediterranean garden as part of the living space.",
-    gallery: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  {
-    id: 5,
-    year: "2023",
-    name: "Minimal House",
-    type: "Interior Design",
-    location: "Tel Aviv",
-    description:
-      "Stripped back to essentials. A meditation on space, light, and material. Every element earns its place.",
-    gallery: [
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-];
+    location: cityCode || zone,
+    description: projectDescriptions[projectCode] || `Project ${folderName}`,
+    gallery,
+  };
+});

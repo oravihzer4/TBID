@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
+import logo from "../../media/tblogo.png";
 import "./Navbar.css";
 
-const navLinks = [
-  { label: "Home", to: "/#hero" },
-  { label: "About", to: "/#about" },
-  { label: "Portfolio", to: "/#portfolio" },
-  { label: "Contact", to: "/#contact" },
-];
+const basePath = import.meta.env.BASE_URL || "/";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { t, toggleLanguage } = useLanguage();
+  const navLinks = [
+    { label: t.nav.home, to: "/#hero" },
+    { label: t.nav.about, to: "/#about" },
+    { label: t.nav.services, to: "/#services" },
+    { label: t.nav.projects, to: "/#portfolio" },
+    { label: t.nav.contact, to: "/#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -41,11 +46,14 @@ function Navbar() {
         onClick={(e) => {
           if (isHome) {
             e.preventDefault();
+            if (location.hash) {
+              window.history.replaceState(null, "", basePath);
+            }
             window.scrollTo({ top: 0, behavior: "smooth" });
           }
         }}
       >
-        TB
+        <img src={logo} alt="Tevel Biton logo" className="navbar__logo-image" />
       </Link>
 
       <button
@@ -65,6 +73,7 @@ function Navbar() {
             setIsMenuOpen(false);
             if (isHome && sectionId) {
               e.preventDefault();
+              window.history.replaceState(null, "", `${basePath}#${sectionId}`);
               const el = document.getElementById(sectionId);
               if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
             }
@@ -78,6 +87,9 @@ function Navbar() {
           );
         })}
       </ul>
+      <button className="navbar__lang" onClick={toggleLanguage} type="button">
+        {t.nav.toggle}
+      </button>
     </nav>
   );
 }
