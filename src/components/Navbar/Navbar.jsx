@@ -14,7 +14,7 @@ function Navbar() {
   const navLinks = [
     { label: t.nav.home, to: "/#hero" },
     { label: t.nav.about, to: "/#about" },
-    { label: t.nav.services, to: "/#services" },
+    // { label: t.nav.services, to: "/#services" },
     { label: t.nav.projects, to: "/#portfolio" },
     { label: t.nav.contact, to: "/#contact" },
   ];

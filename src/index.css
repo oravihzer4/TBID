@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap");
 
 :root {
   --color-bg: #fafaf8;
@@ -30,4 +30,11 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html[lang="he"] {
+  --font-body: "Assistant", "Nunito Sans", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-heading: "Assistant", "Nunito Sans", -apple-system, BlinkMacSystemFont,
+    sans-serif;
 }

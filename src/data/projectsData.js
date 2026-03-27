@@ -21,6 +21,15 @@ const projectDescriptions = {
   YN3: "תכנון ועיצוב פנים פנטהאוז בקריית אונו - שיפוץ מלא",
 };
 
+const projectDetailsByCode = {
+  MY5: { location: "TLV", year: "2021-2022" },
+  G23: { location: "Petah Tikva", year: "2021-2023" },
+  T15: { location: "Neve Monoson", year: "2022-2024" },
+  SA16: { location: "Kiryat Ono", year: "2022-2024" },
+  S30: { location: "Ness Ziona", year: "2022-2025" },
+  YN3: { location: "Kiryat Ono", year: "2024-2025" },
+};
+
 const sortGalleryImages = (a, b) => {
   const aName = a.path.split("/").at(-1).toLowerCase();
   const bName = b.path.split("/").at(-1).toLowerCase();
@@ -35,12 +44,13 @@ export const projects = sortedFolderNames.map((folderName, index) => {
   const gallery = projectFolders[folderName].sort(sortGalleryImages).map((img) => img.src);
   const [zone = "", cityCode = ""] = folderName.split("_");
   const projectCode = zone.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+  const projectDetails = projectDetailsByCode[projectCode];
   return {
     id: index + 1,
-    year: "2024",
+    year: projectDetails?.year || "2024",
     name: folderName,
     type: "Interior Design",
-    location: cityCode || zone,
+    location: projectDetails?.location || cityCode || zone,
     description: projectDescriptions[projectCode] || `Project ${folderName}`,
     gallery,
   };

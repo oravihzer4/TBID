@@ -22,7 +22,7 @@ const translations = {
       cta: "Projects",
     },
     about: {
-      label: "About",
+      label: "About Me",
       title: "Crafting Spaces with Soul",
       p1: "Interior designer and planner. Studio location: Rishon Lezion. Graduated with a B.Design degree in Design and Innovation from the College of Management (2018-2022).",
       p2: "Specializes in planning and designing private and commercial spaces, homes, apartments, businesses, shops and offices - while combining creative thinking with technical and functional solutions.",
@@ -101,7 +101,7 @@ const translations = {
       cta: "פרויקטים",
     },
     about: {
-      label: "אודות ",
+      label: "קצת עלי",
       // title: "עיצוב חללים עם נשמה",
       p1: "מתכננת ומעצבת פנים.\nמיקום הסטודיו: ראשון לציון.\n בוגרת תואר בעיצוב וחדשנות B.Design מהמכללה למנהל (2018-2022).",
       p2: "מתמחה בתכנון ועיצוב חללים פרטיים ומסחריים, בתים, דירות, עסקים, חנויות ומשרדים - תוך שילוב בין חשיבה יצירתית לפתרונות טכניים ופונקציונליים.",

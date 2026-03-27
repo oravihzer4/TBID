@@ -193,6 +193,8 @@
   font-size: 2rem;
   line-height: 1;
   cursor: pointer;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .project-lightbox__nav--prev {

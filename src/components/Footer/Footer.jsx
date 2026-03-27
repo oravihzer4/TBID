@@ -1,13 +1,11 @@
 import "./Footer.css";
-import { useLanguage } from "../../context/LanguageContext";
 import fullLogo from "../../media/fulllogo.png";
 
 function Footer() {
-  const { t } = useLanguage();
   return (
     <footer id="contact" className="footer">
       <div className="footer__journey">
-        <h3 className="footer__journey-title">{t.footer.title}</h3>
+        <h3 className="footer__journey-title">Follow Our Journey</h3>
         <a
           href="https://www.instagram.com/tevelbiton_interiordesign/"
           className="footer__journey-link"
@@ -19,7 +17,7 @@ function Footer() {
               <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.8 1.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z" />
             </svg>
           </span>
-          {t.footer.instagram} →
+          <span className="footer__instagram-text">Instagram →</span>
         </a>
       </div>
       <div className="footer__content">
@@ -59,7 +57,7 @@ function Footer() {
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
                   </svg>
                 </span>
-                {t.footer.address}
+                Tel Aviv, Israel
               </p>
             </div>
           </div>

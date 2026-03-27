@@ -3,6 +3,7 @@
   color: rgba(255, 255, 255, 0.9);
   padding: 5rem 2.5rem 2rem;
   border-top: 1px solid var(--color-border);
+  direction: ltr;
 }
 
 .footer__journey {
@@ -152,6 +153,7 @@
 @media (max-width: 768px) {
   .footer {
     padding: 4rem 1.5rem 1.5rem;
+    text-align: center;
   }
 
   .footer__content {
@@ -160,15 +162,34 @@
 
   .footer__logo-row {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .footer__full-logo {
     max-width: 100%;
-    max-height: 120px;
+    max-height: 88px;
   }
 
   .footer__contact {
     width: 100%;
+    align-items: center;
+  }
+
+  .footer__link.footer__contact-link,
+  .footer__address {
+    justify-content: center;
+  }
+
+  .footer__journey-link {
+    justify-content: center;
+  }
+
+  .footer__instagram-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .footer__instagram-text {
+    display: none;
   }
 }
