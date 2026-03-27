@@ -1,29 +1,31 @@
 .projects {
-  padding: 6rem 2rem;
+  padding: 7rem 2.5rem;
   max-width: 1000px;
   margin: 0 auto;
-  border-top: 1px solid rgba(45, 42, 38, 0.08);
+  border-top: 1px solid var(--color-border);
 }
 
 .projects__header {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .projects__label {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
 }
 
 .projects__title {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 5vw, 4rem);
   font-weight: 400;
   color: var(--color-text);
-  margin: 0.5rem 0 0;
+  margin: 0.75rem 0 0;
 }
 
 .projects__list {
@@ -37,8 +39,10 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem 0;
-  border-bottom: 1px solid rgba(45, 42, 38, 0.06);
+  border-bottom: 1px solid var(--color-border);
   transition: padding-left 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-item:hover {
@@ -53,7 +57,7 @@
 }
 
 .project-item__name {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-text);

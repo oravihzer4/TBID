@@ -1,83 +1,81 @@
 .portfolio {
-  padding: 6rem 2rem;
-  max-width: 1400px;
+  padding: 7rem 2.5rem;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .portfolio__header {
   margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .portfolio__label {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
 }
 
 .portfolio__title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 5vw, 4rem);
   font-weight: 400;
   color: var(--color-text);
-  margin: 0.5rem 0 0;
+  /* margin: 0.75rem 0 0; */
 }
 
 .portfolio__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .portfolio-card {
   background: transparent;
   transition: transform 0.4s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .portfolio-card__image {
   overflow: hidden;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.7rem;
+  aspect-ratio: 4 / 5;
 }
 
-.portfolio-card__placeholder {
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(
-    135deg,
-    var(--color-surface) 0%,
-    var(--color-surface-2) 100%
-  );
-  border: 1px solid rgba(45, 42, 38, 0.08);
+.portfolio-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.portfolio-card:hover .portfolio-card__placeholder {
-  background: linear-gradient(
-    135deg,
-    var(--color-surface-2) 0%,
-    var(--color-surface) 100%
-  );
+.portfolio-card:hover .portfolio-card__img {
+  transform: scale(1.03);
 }
 
-.portfolio-card__category {
+.portfolio-card__meta {
   font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
 }
 
 .portfolio-card__title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-text);
-  margin: 0.5rem 0 0.75rem;
+  margin: 0;
 }
 
 .portfolio-card__description {

@@ -1,67 +1,151 @@
 .footer {
-  background: var(--color-surface);
-  padding: 5rem 2rem 2rem;
-  border-top: 1px solid rgba(45, 42, 38, 0.08);
+  background: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 5rem 2.5rem 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__journey {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer__journey-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.footer__journey-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer__instagram-icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+}
+
+.footer__instagram-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.footer__journey-link:hover {
+  opacity: 0.8;
 }
 
 .footer__content {
   max-width: 1200px;
-  margin: 0 auto 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 auto 3rem;
+}
+
+.footer__brand-main {
+  width: 100%;
+}
+
+.footer__logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 3rem;
+  flex-wrap: wrap;
+  margin: 15px;
 }
 
-.footer__logo {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--color-text);
-  margin: 0 0 0.5rem;
+.footer__full-logo {
+  display: block;
+  width: auto;
+  max-width: min(400px, 62vw);
+  max-height: 92px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
-.footer__tagline {
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.footer__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
 }
 
-.footer__heading {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin: 0 0 1rem;
+.footer__address .footer__contact-icon {
+  margin-top: 0.15em;
+}
+
+.footer__contact-icon {
+  display: inline-flex;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.footer__contact-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
 }
 
 .footer__link {
   display: block;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  transition: color 0.2s ease;
+  margin: 0;
+  transition: opacity 0.2s ease;
 }
 
 .footer__link:hover {
-  color: var(--color-accent);
+  opacity: 0.8;
+}
+
+.footer__link.footer__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer__bottom {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 2rem;
-  border-top: 1px solid rgba(45, 42, 38, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer__copyright {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
 
@@ -71,8 +155,20 @@
   }
 
   .footer__content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer__logo-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__full-logo {
+    max-width: 100%;
+    max-height: 120px;
+  }
+
+  .footer__contact {
+    width: 100%;
   }
 }
