@@ -72,6 +72,10 @@ const translations = {
       text: "The page you are looking for does not exist or has been moved.",
       back: "Back Home",
     },
+    cookies: {
+      message: "We use cookies to improve your browsing experience on this website.",
+      accept: "Accept",
+    },
     projectMeta: {
       "Full Renovation": "Full Renovation",
       "Interior Design": "Interior Design",
@@ -149,6 +153,10 @@ const translations = {
       title: "העמוד לא נמצא",
       text: "העמוד שחיפשת אינו קיים או הועבר.",
       back: "חזרה לדף הבית",
+    },
+    cookies: {
+      message: "אנו משתמשים בעוגיות כדי לשפר את חוויית הגלישה באתר.",
+      accept: "אישור",
     },
     projectMeta: {
       "Full Renovation": "שיפוץ מלא",
