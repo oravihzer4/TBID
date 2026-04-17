@@ -3,7 +3,7 @@ import { projects } from "../../data/projectsData";
 import { useLanguage } from "../../context/LanguageContext";
 import "./Portfolio.css";
 
-function PortfolioCard({ project, t }) {
+function PortfolioCard({ project }) {
   return (
     <Link to={`/project/${project.id}`} className="portfolio-card">
       <div className="portfolio-card__image">
@@ -15,9 +15,7 @@ function PortfolioCard({ project, t }) {
       </div>
       <div className="portfolio-card__content">
         <h2 className="portfolio-card__title">{project.name}</h2>
-        {/* <span className="portfolio-card__meta">
-          {t.projectMeta[project.type] || project.type} — {project.year}
-        </span> */}
+        <p className="portfolio-card__description">{project.description}</p>
       </div>
     </Link>
   );
@@ -33,7 +31,7 @@ function Portfolio() {
       </div>
       <div className="portfolio__grid">
         {projects.map((project) => (
-          <PortfolioCard key={project.id} project={project} t={t} />
+          <PortfolioCard key={project.id} project={project} />
         ))}
       </div>
     </section>

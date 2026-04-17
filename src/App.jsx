@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Navbar, Hero, About, Services, Portfolio, Footer } from "./components";
+import { Navbar, Hero, Ad, About, Services, Portfolio, Footer } from "./components";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
 import "./App.css";
@@ -10,6 +10,7 @@ function HomePage() {
     <>
       <Hero />
       <Portfolio />
+      <Ad />
       <About />
       {/* <Services /> */}
       <Footer />
