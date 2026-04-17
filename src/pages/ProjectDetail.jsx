@@ -5,7 +5,7 @@ import { useLanguage } from "../context/LanguageContext";
 import "./ProjectDetail.css";
 
 function ProjectDetail() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { id } = useParams();
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const project = projects.find((p) => p.id === parseInt(id, 10));
@@ -42,6 +42,9 @@ function ProjectDetail() {
     );
   }
 
+  const projectDescription =
+    language === "he" ? project.description : project.descriptionEn || project.description;
+
   return (
     <main className="project-detail">
       <Link to="/#portfolio" className="project-detail__back">
@@ -54,7 +57,7 @@ function ProjectDetail() {
           {t.projectMeta[project.location] || project.location} · {project.year}
         </span>
         <h1 className="project-detail__title">{project.name}</h1>
-        <p className="project-detail__description">{project.description}</p>
+        <p className="project-detail__description">{projectDescription}</p>
       </header>
 
       <section className="project-detail__gallery">

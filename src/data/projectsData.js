@@ -21,6 +21,15 @@ const projectDescriptions = {
   YN3: "פנטהאוז בקריית אונו",
 };
 
+const projectDescriptionsEn = {
+  MY5: "Duplex penthouse - Neve Tzedek",
+  G23: "Penthouse in Petah Tikva",
+  S30: "Private house in Ness Ziona",
+  SA16: "Penthouse in Kiryat Ono",
+  T15: "Penthouse in Neve Monoson",
+  YN3: "Penthouse in Kiryat Ono",
+};
+
 const projectDetailsByCode = {
   MY5: { location: "TLV", year: "2021-2022" },
   G23: { location: "Petah Tikva", year: "2021-2023" },
@@ -52,6 +61,7 @@ export const projects = sortedFolderNames.map((folderName, index) => {
     type: "Interior Design",
     location: projectDetails?.location || cityCode || zone,
     description: projectDescriptions[projectCode] || `Project ${folderName}`,
+    descriptionEn: projectDescriptionsEn[projectCode] || `Project ${folderName}`,
     gallery,
   };
 });

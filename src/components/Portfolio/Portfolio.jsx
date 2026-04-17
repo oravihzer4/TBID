@@ -4,6 +4,10 @@ import { useLanguage } from "../../context/LanguageContext";
 import "./Portfolio.css";
 
 function PortfolioCard({ project }) {
+  const { language } = useLanguage();
+  const projectDescription =
+    language === "he" ? project.description : project.descriptionEn || project.description;
+
   return (
     <Link to={`/project/${project.id}`} className="portfolio-card">
       <div className="portfolio-card__image">
@@ -15,7 +19,7 @@ function PortfolioCard({ project }) {
       </div>
       <div className="portfolio-card__content">
         <h2 className="portfolio-card__title">{project.name}</h2>
-        <p className="portfolio-card__description">{project.description}</p>
+        <p className="portfolio-card__description">{projectDescription}</p>
       </div>
     </Link>
   );
