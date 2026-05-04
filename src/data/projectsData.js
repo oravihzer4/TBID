@@ -19,15 +19,17 @@ const projectDescriptions = {
   SA16: "פנטהאוז בקריית אונו",
   T15: "פנטהאוז בנווה מונוסון",
   YN3: "פנטהאוז בקריית אונו",
+  SHT: "מסעדה ביבנה",
 };
 
 const projectDescriptionsEn = {
   MY5: "Duplex penthouse - Neve Tzedek",
-  G23: "Penthouse in Petah Tikva",
-  S30: "Private house in Ness Ziona",
-  SA16: "Penthouse in Kiryat Ono",
-  T15: "Penthouse in Neve Monoson",
-  YN3: "Penthouse in Kiryat Ono",
+  G23: "Penthouse - Petah Tikva",
+  S30: "Private house - Ness Ziona",
+  SA16: "Penthouse - Kiryat Ono",
+  T15: "Penthouse - Neve Monoson",
+  YN3: "Penthouse - Kiryat Ono",
+  SHT: "Restaurant - Yavne",
 };
 
 const projectDetailsByCode = {
@@ -37,6 +39,11 @@ const projectDetailsByCode = {
   SA16: { location: "Kiryat Ono", year: "2022-2024" },
   S30: { location: "Ness Ziona", year: "2022-2025" },
   YN3: { location: "Kiryat Ono", year: "2024-2025" },
+  SHT: { location: "Yavne", year: "2026" },
+};
+
+const preferredCoverByFolder = {
+  SHT_Y: "_DSC2452 copy 2.jpg",
 };
 
 const sortGalleryImages = (a, b) => {
@@ -50,7 +57,18 @@ const sortGalleryImages = (a, b) => {
 };
 
 export const projects = sortedFolderNames.map((folderName, index) => {
-  const gallery = projectFolders[folderName].sort(sortGalleryImages).map((img) => img.src);
+  const preferredCover = preferredCoverByFolder[folderName]?.toLowerCase();
+  const gallery = projectFolders[folderName]
+    .sort(sortGalleryImages)
+    .sort((a, b) => {
+      if (!preferredCover) return 0;
+      const aName = a.path.split("/").at(-1).toLowerCase();
+      const bName = b.path.split("/").at(-1).toLowerCase();
+      if (aName === preferredCover && bName !== preferredCover) return -1;
+      if (aName !== preferredCover && bName === preferredCover) return 1;
+      return 0;
+    })
+    .map((img) => img.src);
   const [zone = "", cityCode = ""] = folderName.split("_");
   const projectCode = zone.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
   const projectDetails = projectDetailsByCode[projectCode];

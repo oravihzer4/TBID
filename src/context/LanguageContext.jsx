@@ -85,6 +85,7 @@ const translations = {
       Jaffa: "Jaffa",
       "Ramat Gan": "Ramat Gan",
       Herzliya: "Herzliya",
+      Yavne: "Yavne",
     },
   },
   he: {
@@ -167,6 +168,7 @@ const translations = {
       Jaffa: "יפו",
       "Ramat Gan": "רמת גן",
       Herzliya: "הרצליה",
+      Yavne: "יבנה",
     },
   },
 };
