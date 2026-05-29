@@ -75,7 +75,8 @@ const translations = {
       back: "Back Home",
     },
     cookies: {
-      message: "We use cookies to improve your browsing experience on this website.",
+      message:
+        "We use cookies to improve your browsing experience on this website.",
       accept: "Accept",
     },
     projectMeta: {

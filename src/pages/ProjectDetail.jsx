@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/projectsData";
 import { useLanguage } from "../context/LanguageContext";
+import ParallaxGallery from "../components/ParallaxGallery/ParallaxGallery";
 import "./ProjectDetail.css";
 
 function ProjectDetail() {
@@ -43,41 +44,40 @@ function ProjectDetail() {
   }
 
   const projectDescription =
-    language === "he" ? project.description : project.descriptionEn || project.description;
+    language === "he"
+      ? project.description
+      : project.descriptionEn || project.description;
 
   return (
     <main className="project-detail">
-      <Link to="/#portfolio" className="project-detail__back">
-        {t.projectDetail.back}
-      </Link>
-
-      <header className="project-detail__header">
-        <span className="project-detail__meta">
-          {t.projectMeta[project.type] || project.type} ·{" "}
-          {t.projectMeta[project.location] || project.location} · {project.year}
-        </span>
-        <h1 className="project-detail__title">{project.name}</h1>
-        <p className="project-detail__description">{projectDescription}</p>
-      </header>
-
-      <section className="project-detail__gallery">
-        {project.gallery.map((img, index) => (
-          <button
-            key={index}
-            type="button"
-            className="project-gallery__item"
-            onClick={() => setLightboxIndex(index)}
-            aria-label={`Open image ${index + 1}`}
-          >
-            <img src={img} alt={`${project.name} ${index + 1}`} />
-          </button>
-        ))}
-      </section>
-
-      <div className="project-detail__footer">
-        <Link to="/#portfolio" className="project-detail__cta">
+      <div className="project-detail__container">
+        <Link to="/#portfolio" className="project-detail__back">
           {t.projectDetail.back}
         </Link>
+
+        <header className="project-detail__header">
+          <span className="project-detail__meta">
+            {t.projectMeta[project.type] || project.type} ·{" "}
+            {t.projectMeta[project.location] || project.location} ·{" "}
+            {project.year}
+          </span>
+          <h1 className="project-detail__title">{project.name}</h1>
+          <p className="project-detail__description">{projectDescription}</p>
+        </header>
+      </div>
+
+      <ParallaxGallery
+        images={project.gallery}
+        projectName={project.name}
+        onImageClick={setLightboxIndex}
+      />
+
+      <div className="project-detail__container">
+        <div className="project-detail__footer">
+          <Link to="/#portfolio" className="project-detail__cta">
+            {t.projectDetail.back}
+          </Link>
+        </div>
       </div>
 
       {lightboxIndex !== null && (

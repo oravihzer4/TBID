@@ -6,7 +6,6 @@ import {
   Hero,
   Ad,
   About,
-  Services,
   Portfolio,
   Footer,
 } from "./components";
