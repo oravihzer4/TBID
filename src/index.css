@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap");
 
-:root {
+:root,
+[data-theme="light"] {
+  color-scheme: light;
   --color-bg: #fafaf8;
   --color-surface: #f5f4f0;
   --color-surface-2: #ebe9e4;
@@ -8,9 +10,42 @@
   --color-text-muted: #5c5854;
   --color-accent: #2d2a26;
   --color-border: rgba(26, 25, 23, 0.08);
+  --color-card: #ffffff;
+  --color-footer-bg: #1a1917;
+  --color-footer-text: rgba(255, 255, 255, 0.9);
+  --color-footer-muted: rgba(255, 255, 255, 0.75);
+  --color-footer-border: rgba(255, 255, 255, 0.15);
+  --color-nav-hero: rgba(255, 255, 255, 0.95);
+  --color-nav-hero-border: rgba(255, 255, 255, 0.6);
+  --color-navbar-scrolled: rgba(250, 250, 248, 0.95);
+  --color-navbar-mobile-menu: rgba(250, 248, 245, 0.98);
+  --color-logo-filter: brightness(0) invert(1);
+  --color-logo-filter-scrolled: none;
   --font-body: "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading:
     "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #121110;
+  --color-surface: #1a1917;
+  --color-surface-2: #232220;
+  --color-text: #f5f4f0;
+  --color-text-muted: #a8a4a0;
+  --color-accent: #e8e6e2;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-card: #1e1d1b;
+  --color-footer-bg: #0a0908;
+  --color-footer-text: rgba(255, 255, 255, 0.9);
+  --color-footer-muted: rgba(255, 255, 255, 0.75);
+  --color-footer-border: rgba(255, 255, 255, 0.12);
+  --color-nav-hero: rgba(255, 255, 255, 0.95);
+  --color-nav-hero-border: rgba(255, 255, 255, 0.6);
+  --color-navbar-scrolled: rgba(18, 17, 16, 0.95);
+  --color-navbar-mobile-menu: rgba(26, 25, 23, 0.98);
+  --color-logo-filter: brightness(0) invert(1);
+  --color-logo-filter-scrolled: brightness(0) invert(1);
 }
 
 * {

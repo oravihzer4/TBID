@@ -11,6 +11,8 @@ const translations = {
       projects: "Projects",
       contact: "Contact",
       toggle: "HEB",
+      themeDark: "Dark mode",
+      themeLight: "Light mode",
     },
     hero: {
       label: "Interior Designer",
@@ -40,7 +42,7 @@ const translations = {
       items: [
         [
           "Full tenant change process",
-          "Comprehensive support from the stage of purchasing the apartment to entering the new home. The process includes managing the relationship with the contractor, support for meetings with all project suppliers, preparation and submission of plans, and availability throughout the process. After receiving the key, the support continues until the design and furnishing of the apartment is completed, including furniture planning and shopping days.",
+          "Comprehensive support from the stage of purchasing the apartment to entering the new home. The process includes managing the relationship with the contractor, support for meetings with all project suppliers, preparation and submission of plans, and availability throughout the process. After handover, the support continues until the design and furnishing of the apartment is completed, including furniture planning and shopping days.",
         ],
         [
           "Renovation process",
@@ -96,6 +98,8 @@ const translations = {
       projects: "פרויקטים",
       contact: "צור קשר",
       toggle: "ENG",
+      themeDark: "מצב כהה",
+      themeLight: "מצב בהיר",
     },
     hero: {
       label: "מעצבת פנים",

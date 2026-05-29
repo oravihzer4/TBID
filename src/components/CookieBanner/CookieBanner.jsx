@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import "./CookieBanner.css";
 
-const COOKIE_KEY = "tbid_cookies_ack";
+const COOKIE_CONSENT_STORAGE = "tbid_cookies_ack";
 
 function CookieBanner() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const hasAccepted = localStorage.getItem(COOKIE_KEY) === "true";
+    const hasAccepted = localStorage.getItem(COOKIE_CONSENT_STORAGE) === "true";
     setIsVisible(!hasAccepted);
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem(COOKIE_KEY, "true");
+    localStorage.setItem(COOKIE_CONSENT_STORAGE, "true");
     setIsVisible(false);
   };
 

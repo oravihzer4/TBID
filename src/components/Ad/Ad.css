@@ -1,6 +1,6 @@
 .ad {
   /* padding: 2rem 0 0; */
-  background: #fff;
+  background: var(--color-card);
   display: flex;
   justify-content: center;
 }

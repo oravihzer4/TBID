@@ -17,20 +17,20 @@ function ProjectDetail() {
   useEffect(() => {
     if (lightboxIndex === null) return;
 
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") {
+    const onKeyboardNav = (event) => {
+      if (event.code === "Escape") {
         setLightboxIndex(null);
-      } else if (event.key === "ArrowRight") {
+      } else if (event.code === "ArrowRight") {
         setLightboxIndex((prev) => (prev + 1) % project.gallery.length);
-      } else if (event.key === "ArrowLeft") {
+      } else if (event.code === "ArrowLeft") {
         setLightboxIndex((prev) =>
           prev === 0 ? project.gallery.length - 1 : prev - 1,
         );
       }
     };
 
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    window.addEventListener("keydown", onKeyboardNav);
+    return () => window.removeEventListener("keydown", onKeyboardNav);
   }, [lightboxIndex, project?.gallery?.length]);
 
   if (!project) {

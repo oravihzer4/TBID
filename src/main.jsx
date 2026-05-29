@@ -5,14 +5,17 @@ import { Analytics } from "@vercel/analytics/react";
 import "./index.css";
 import App from "./App.jsx";
 import { LanguageProvider } from "./context/LanguageContext.jsx";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <LanguageProvider>
-      <BrowserRouter>
-        <App />
-        <Analytics />
-      </BrowserRouter>
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <BrowserRouter>
+          <App />
+          <Analytics />
+        </BrowserRouter>
+      </LanguageProvider>
+    </ThemeProvider>
   </StrictMode>,
 );

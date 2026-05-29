@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
+import { useTheme } from "../../context/ThemeContext";
 import logo from "../../media/tblogo.png";
 import "./Navbar.css";
 
@@ -11,6 +12,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { t, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const navLinks = [
     { label: t.nav.home, to: "/#hero" },
     { label: t.nav.about, to: "/#about" },
@@ -87,9 +89,20 @@ function Navbar() {
           );
         })}
       </ul>
-      <button className="navbar__lang" onClick={toggleLanguage} type="button">
-        {t.nav.toggle}
-      </button>
+      <div className="navbar__actions">
+        <button
+          className="navbar__theme"
+          onClick={toggleTheme}
+          type="button"
+          aria-label={theme === "light" ? t.nav.themeDark : t.nav.themeLight}
+          title={theme === "light" ? t.nav.themeDark : t.nav.themeLight}
+        >
+          <span aria-hidden="true">{theme === "light" ? "☾" : "☀"}</span>
+        </button>
+        <button className="navbar__lang" onClick={toggleLanguage} type="button">
+          {t.nav.toggle}
+        </button>
+      </div>
     </nav>
   );
 }
